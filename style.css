@@ -1,126 +1,183 @@
-
-/* Reset some default styles for consistency */
 * {
-    box-sizing: border-box;
     margin: 0;
-    padding: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-.container-fluid
-{
-    width: 100%;
-    /* margin: auto; */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
 }
+
 .container {
-    width: 90%;
-    /* Adjust width as needed */
-    margin: auto;
-    /* Center the container horizontally */
-}
-.mt-5
-{
-    margin-top: 20px;
+    width: 450px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Create a row class */
-.row {
+/* h1 {
+    text-align: center;
+    color: #ff5a6e;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    justify-content: end;
+} */
+.heading-container {
     display: flex;
-    flex-wrap: wrap;
-    margin: -15px;
-    /* To counteract default margin on columns */
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: #ff5a6e;
+    font-size: 0.8em;
 }
+.heading-container::before,
+    .heading-container::after {
+        content: "";
+        flex: 1;
+        height: 0.8px;
+        background-color: #ff5a6e;
+        margin: 0 10px;
+        
+    }
 
-/* Create a column class with 12 parts */
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-    flex: 0 0 100%;
-    /* Make columns stack on small screens by default */
+    .heading {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ff5a6e; /* Pink color */
+        text-align: center;
+    }
+
+.option {
+    border: 1px solid #ddd;
     padding: 15px;
-    /* Add some spacing between columns */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
 }
-
-/* Responsive styling */
-@media (min-width: 576px) {
-    .col-1 {
-        flex: 0 0 8.333333%;
-    }
-
-    .col-2 {
-        flex: 0 0 16.666667%;
-    }
-
-    .col-3 {
-        flex: 0 0 25%;
-    }
-
-    .col-4 {
-        flex: 0 0 33.333333%;
-    }
-
-    .col-5 {
-        flex: 0 0 41.666667%;
-    }
-
-    .col-6 {
-        flex: 0 0 50%;
-    }
-
-    .col-7 {
-        flex: 0 0 58.333333%;
-    }
-
-    .col-8 {
-        flex: 0 0 66.666667%;
-    }
-
-    .col-9 {
-        flex: 0 0 75%;
-    }
-
-    .col-10 {
-        flex: 0 0 83.333333%;
-    }
-
-    .col-11 {
-        flex: 0 0 91.666667%;
-    }
-
-    .col-12 {
-        flex: 0 0 100%;
-    }
-}
-.list
-{
+.flex {
     display: flex;
-    list-style-type: none;
+    flex-direction: column;
 }
-.ml-5
-{
-    margin-left: 20px;
+/* .option.popular {
+    border-color: #ff5a6e;
+} */
+
+.most-popular-tag {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #ff5a6e;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
 }
-img{
+
+.unit-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.unit-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.discount {
+    background-color: #ff5a6e;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.unit-price {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.original-price {
+    font-size: 0.9em;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.unit-subtitle {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.size-color-selection {
+    margin-top: 10px;
+    /* display: none; */
+}
+
+.selection-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.selection-row select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 15px;
+    /* font-weight: bold; */
+}
+
+.add-to-cart {
     width: 100%;
+    padding: 10px;
+    background-color: #ff5a6e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 15px;
+    cursor: pointer;
 }
-.logo
-{
-    width: 50px;
+
+.add-to-cart:hover {
+    background-color: #e94c61;
 }
-button
-{
-    width: 100%;
-    background: black;
-    color: white;
+
+.powered-by {
+    text-align: end;
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 10px;
 }
-.contact-button
-{
-    width: 20%;
-}
+
+    .hidden {
+        display: none;
+    }
+    
+    .visible {
+        display: inline-block; 
+    }
+    .option.active {
+        border-color: #ff5e7a; 
+        border-width: 3px;
+    }
+    .flex1{
+        flex-direction: row;
+    }
